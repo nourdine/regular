@@ -1,0 +1,21 @@
+{
+   "name": "nourdine/regular",
+   "type": "library",
+   "description": "A wrapper around PHP regexps",
+   "keywords": ["regexp"],
+   "license": "GNU GPL v3",
+   "authors": [
+      {
+         "name": "nourdine",
+         "email": "admin@nourdine.net"
+      }
+   ],
+   "require": {
+      "php": ">=5.3"
+   },
+   "autoload": {
+      "psr-0": {
+         "regular": "src/"
+      }
+   }
+}
