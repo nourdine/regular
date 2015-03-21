@@ -2,6 +2,8 @@
 
 namespace regular;
 
+use RuntimeException;
+
 class Matches {
 
    protected $matches = null;
@@ -38,22 +40,22 @@ class Matches {
     * Return the actual full match.
     * 
     * @return string
-    * @throws \RuntimeException
+    * @throws RuntimeException
     */
    public function getWholeMatch() {
       if ($this->success) {
          return $this->matches[0];
       } else {
-         throw new \RuntimeException("The matching was not succesfull");
+         throw new RuntimeException("The matching was not succesfull");
       }
    }
 
    /**
-    * Return a captured gruop.
+    * Return a captured group.
     * 
     * @param integer $i Index of the wanted captured subgroup
     * @return string
-    * @throws \RuntimeException
+    * @throws RuntimeException
     */
    public function getCaptured($i) {
       if ($this->success) {
@@ -62,13 +64,13 @@ class Matches {
             if (array_key_exists($i, $this->matches)) {
                return $this->matches[$i];
             } else {
-               throw new \RuntimeException("The index " . $i . " does not identify any captured subpattern");
+               throw new RuntimeException("The index " . $i . " does not identify any captured subpattern");
             }
          } else {
-            throw new \RuntimeException("Negative indexes are not allowed");
+            throw new RuntimeException("Negative indexes are not allowed");
          }
       } else {
-         throw new \RuntimeException("The matching was not succesfull");
+         throw new RuntimeException("The matching was not succesfull");
       }
    }
 }

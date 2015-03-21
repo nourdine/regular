@@ -2,6 +2,8 @@
 
 namespace regular;
 
+use RuntimeException;
+
 class Regular {
 
    protected $pattern = null;
@@ -15,14 +17,14 @@ class Regular {
 
    /**
     * @param string $string The text to search for matches
-    * @return \regular\Matches
-    * @throws \RuntimeException
+    * @return Matches
+    * @throws RuntimeException
     */
    public function match($string) {
       $matches = array();
       $result = preg_match($this->pattern, $string, $matches);
       if ($result === false) {
-         throw new \RuntimeException("Regexp engine failure");
+         throw new RuntimeException("Regexp engine failure");
       }
       return new Matches($result, $matches);
    }
