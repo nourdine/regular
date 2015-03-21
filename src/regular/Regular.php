@@ -22,7 +22,7 @@ class Regular {
     */
    public function match($string) {
       $matches = array();
-      $result = preg_match($this->pattern, $string, $matches);
+      $result = preg_match($this->pattern, $string, $matches, PREG_OFFSET_CAPTURE);
       if ($result === false) {
          throw new RuntimeException("Regexp engine failure");
       }

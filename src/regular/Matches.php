@@ -3,6 +3,7 @@
 namespace regular;
 
 use RuntimeException;
+use regular\Group;
 
 class Matches {
 
@@ -44,7 +45,7 @@ class Matches {
     */
    public function getWholeMatch() {
       if ($this->success) {
-         return $this->matches[0];
+         return new Group($this->matches[0]);
       } else {
          throw new RuntimeException("The matching was not succesfull");
       }
@@ -60,9 +61,9 @@ class Matches {
    public function getCaptured($i) {
       if ($this->success) {
          if ($i >= 0) {
-            $i++;
+            $i++; // Captured groups starts from index 1. Index 0 is  the whole match! 
             if (array_key_exists($i, $this->matches)) {
-               return $this->matches[$i];
+               return new Group($this->matches[$i]);
             } else {
                throw new RuntimeException("The index " . $i . " does not identify any captured subpattern");
             }

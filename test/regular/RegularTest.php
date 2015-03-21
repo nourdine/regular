@@ -40,12 +40,12 @@ class RegularTest extends PHPUnit_Framework_TestCase {
 
    public function testWholeMatch() {
       $result = $this->regular->match(self::TEXT);
-      $this->assertEquals("www.nourdine.net", $result->getWholeMatch());
+      $this->assertEquals("www.nourdine.net", $result->getWholeMatch()->getValue());
    }
 
    public function testCaptured() {
       $result = $this->regular->match(self::TEXT);
-      $this->assertEquals("nourdine", $result->getCaptured(0));
-      $this->assertEquals("net", $result->getCaptured(1));
+      $this->assertEquals("nourdine", $result->getCaptured(0)->getValue());
+      $this->assertEquals("net", $result->getCaptured(1)->getValue());
    }
 }
