@@ -5,7 +5,7 @@ namespace regular;
 use RuntimeException;
 use regular\Group;
 
-class Matches {
+class Match {
 
    protected $matches = null;
    protected $success = false;
@@ -40,7 +40,7 @@ class Matches {
    /**
     * Return the actual full match.
     * 
-    * @return string
+    * @return Group
     * @throws RuntimeException
     */
    public function getWholeMatch() {
@@ -55,7 +55,7 @@ class Matches {
     * Return a captured group.
     * 
     * @param integer $i Index of the wanted captured subgroup
-    * @return string
+    * @return Group
     * @throws RuntimeException
     */
    public function getCaptured($i) {

@@ -17,7 +17,7 @@ class Regular {
 
    /**
     * @param string $string The text to search for matches
-    * @return Matches
+    * @return Match
     * @throws RuntimeException
     */
    public function match($string) {
@@ -26,6 +26,6 @@ class Regular {
       if ($result === false) {
          throw new RuntimeException("Regexp engine failure");
       }
-      return new Matches($result, $matches);
+      return new Match($result, $matches);
    }
 }
