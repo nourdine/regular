@@ -4,6 +4,9 @@ namespace regular;
 
 use RuntimeException;
 
+/**
+ * UE! Ma e' regolare? [Cit.] Daveoncode in Milan
+ */
 class Regular {
 
    protected $pattern = null;
@@ -28,7 +31,7 @@ class Regular {
       }
       return new Match($result, $matches);
    }
-   
+
    /**
     * @param string $string The text to test against the regexp
     * @return boolean
