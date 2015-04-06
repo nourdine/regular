@@ -28,4 +28,14 @@ class Regular {
       }
       return new Match($result, $matches);
    }
+   
+   /**
+    * @param string $string The text to test against the regexp
+    * @return boolean
+    * @throws RuntimeException
+    */
+   public function test($string) {
+      $match = $this->match($string);
+      return $match->isSuccess();
+   }
 }
