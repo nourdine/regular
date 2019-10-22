@@ -3,7 +3,6 @@
    "type": "library",
    "description": "A wrapper around PHP regexps",
    "keywords": ["regexp"],
-   "license": "GNU GPL v3",
    "authors": [
       {
          "name": "nourdine"
@@ -17,4 +16,4 @@
          "regular": "src/"
       }
    }
-}
+}GNU GPL v3
